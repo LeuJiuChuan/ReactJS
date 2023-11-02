@@ -3,6 +3,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import {NAvbar,Footer,Sidebar,ThemeSettings} from './components'
+
 
 const App = () => {
   const activeMenu = false;
@@ -40,8 +42,26 @@ const App = () => {
           </div>
           <div>
             <Routes>
+              {/*Dashboard*/}
               <Route path="/" element="ECommerce"/>
-              <Route path="/" element="ECommerce"/>
+              <Route path="/ecommerce" element="ECommerce"/>
+               {/*Pages*/}
+               <Route path="/orders" element="Orders"/>
+               <Route path="/employee" element="Employees"/>
+               <Route path="/customers" element="Customer"/>
+               {/*Apps*/}
+              <Route path="/kanban" element="Kanban"/>
+              <Route path="/editor" element="Editor"/>
+              <Route path="/calender" element="Calender"/>
+              <Route path="/color-picker" element="ColorPicker"/>
+              {/*Charts*/}
+              <Route path="/line" element="Line"/>
+              <Route path="/area" element="Area"/>
+              <Route path="/bar" element="Bar"/>
+              <Route path="/financial" element="Financial"/>
+              <Route path="/color-mapping" element="ColorMapping"/>
+              <Route path="/pyramid" element="Pyramid"/>
+              <Route path="/stacked" element="Stacked"/>
             </Routes>
           </div>
         </div>
