@@ -9,7 +9,7 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  const {activeMenu}=useStateContext();
+  const {activeMenu,ThemeSettings,setThemeSettings}=useStateContext();
 
 
   return (
@@ -44,7 +44,7 @@ const App = () => {
             </div>
          
           <div>
-            <ThemeSettings/>
+           {ThemeSettings && <ThemeSettings/>}
             <Routes>
               {/*Dashboard*/}
               <Route path="/" element={<Ecommerce/>}/>
