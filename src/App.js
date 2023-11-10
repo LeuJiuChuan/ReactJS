@@ -9,7 +9,7 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  const {activeMenu,ThemeSettings,setThemeSettings}=useStateContext();
+  const {activeMenu,themeSettings,setThemeSettings,currentColor}=useStateContext();
 
 
   return (
@@ -20,8 +20,9 @@ const App = () => {
             <TooltipComponent content="Settings" position='"Top'>
               <button
                 type="button"
+                onClick={()=>setThemeSettings(true)}
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ background: "blue", borderRadius: "50%" }}
+                style={{ background: currentColor, borderRadius: "50%" }}
               >
                 <FiSettings />
               </button>
@@ -44,7 +45,7 @@ const App = () => {
             </div>
          
           <div>
-           {ThemeSettings && <ThemeSettings/>}
+           {themeSettings && <ThemeSettings/>}
             <Routes>
               {/*Dashboard*/}
               <Route path="/" element={<Ecommerce/>}/>

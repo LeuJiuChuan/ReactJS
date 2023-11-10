@@ -35,8 +35,8 @@ const ThemeSettings = () => {
               name='theme'
               value="Light"
               className='cursor-pointer'
-              onChange={()=> {}}
-              checked={true}
+              onChange={setMode}
+              checked={currentMode === 'Light'}
               />
               <label
               htmlFor='light'
@@ -53,8 +53,8 @@ Light
               name='theme'
               value="Dark"
               className='cursor-pointer'
-              onChange={()=> {}}
-              checked={true}
+              onChange={setMode}
+              checked={currentMode === 'Dark'}
               />
               <label
               htmlFor='dark'
@@ -77,9 +77,9 @@ Dark
                 style={{
                   backgroundColor:item.color
                 }}
-                onClick={()=>{}}
+                onClick={()=>setColor(item.color)}
                 >
-                  <BsCheck className={`ml-2 text-2xl text-white ${false ? 'block':'hidden'}`}/>
+                  <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block':'hidden'}`}/>
                 </button>
               </div>
           </TooltipComponent>
